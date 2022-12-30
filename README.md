@@ -1,2 +1,3 @@
-# My_first_blog
-Beadandónak
+# my-first-blog
+
+https://tutorial.djangogirls.org/hu/
