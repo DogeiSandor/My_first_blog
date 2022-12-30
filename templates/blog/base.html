@@ -1,0 +1,29 @@
+{% load static %}
+<html>
+    <head>
+        <title>Django Unchained</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            {% if user.is_authenticated %}
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            {% endif %}
+            <h1><a href="/">Django Unchained</a></h1>
+        </div>
+        <h3 style="margin: 50px;">
+            Ez egy oldal, megannyi munkának és ötletnek. A plussz jel segítségébel megannyi munkát mutathatsz meg a világnak. Ne légy rest és oszd meg, ami benned van a közönséggel. Ez a lényege ennek az oldalnak, mint a neve is írja, hogy elszabadulhassanak az új ötletek.
+        </h3>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
